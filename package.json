@@ -28,7 +28,7 @@
       "react-app/jest"
     ]
   },
-  "Proxy": "http://localhost:5000",
+  "Proxy": "https://mern-todo-app-taupe-iota.vercel.app/",
   "browserslist": {
     "production": [
       ">0.2%",
