@@ -15,7 +15,7 @@ const TodoList = ({userData}) => {
 
     
     const getTodos = async () =>{
-        const response = await axios.post('https://mern-todo-app-taupe-iota.vercel.app/todo/getTodos' , userData)
+        const response = await axios.post('https://mern-todo-app-lake.vercel.app/todo/getTodos' , userData)
         console.log(todos)
         setTodos(response.data , 'user Todos are here')
         console.log(userData , 'user data is here')
@@ -23,13 +23,13 @@ const TodoList = ({userData}) => {
 
     const onSubmit = async (data) => {
         if(update === null){
-            const response = await axios.post('https://mern-todo-app-taupe-iota.vercel.app/todo/createTodo',data)
+            const response = await axios.post('https://mern-todo-app-lake.vercel.app/todo/createTodo',data)
             if(response.data.title){
                 NotificationManager.success("Todo added successfully","");
             }
             getTodos()
         }else{
-            const response = await axios.put(`https://mern-todo-app-taupe-iota.vercel.app/todo/update/${update?._id}`,data)
+            const response = await axios.put(`https://mern-todo-app-lake.vercel.app/todo/update/${update?._id}`,data)
             setUpdate(null)
             if(response.data.title){
                 NotificationManager.success("Todo Updated successfully","");
@@ -41,7 +41,7 @@ const TodoList = ({userData}) => {
     }
 
     const deleteTodo = async (id) =>{
-        const response = await axios.delete(`https://mern-todo-app-taupe-iota.vercel.app/todo/delete/${id}`)
+        const response = await axios.delete(`https://mern-todo-app-lake.vercel.app/todo/delete/${id}`)
         console.log(response)
         if(response.status === 200){
             NotificationManager.success("Todo Deleted successfully","");
