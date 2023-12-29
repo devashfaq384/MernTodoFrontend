@@ -8,7 +8,7 @@ const Login = ({setForm , setUserData}) => {
     const { register , handleSubmit } = useForm()
 
     const onSubmit = async (data) => {
-        const response = await axios.post('https://mern-todo-app-taupe-iota.vercel.app/user/login' , data)
+        const response = await axios.post('https://mern-todo-app-lake.vercel.app/user/login' , data)
         console.log(response ,"login")
         if (response.data.username) {
             await setUserData(response.data)
